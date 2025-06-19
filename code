@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #f8f9fa;
+            --text-color: #212529;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(to right, #e3f2fd, #ffffff);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+            nav a:hover {
+                color: #084298;
+            }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: #fff;
+        }
+
+            .hero h2 {
+                margin-bottom: 1rem;
+            }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .card {
+            background: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+            .card:hover {
+                transform: scale(1.03);
+            }
+
+            .card img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                margin-bottom: 1rem;
+            }
+
+        footer {
+            text-align: center;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        /* Mobile-first media queries */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+                .nav-links.active {
+                    display: flex;
+                }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 500px) {
+            header {
+                padding: 1.5rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+                .card h3 {
+                    font-size: 1.1rem;
+                }
+
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Shopping Hub</h1>
+        <p>Adapts beautifully to all</p>
+    </header>
+
+    <nav>
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <div class="nav-links" id="navLinks">
+            <a href="#">Women</a>
+            <a href="#">Men</a>
+            <a href="#">Heels & Sandals</a>
+            <a href="#">Bags & More</a>
+            <a href="#">Jewellery & Accessories</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h2>"YOUR STYLE, YOUR RULES, YOUR STORE."</h2>
+        <p>CHECK OUT FOR THE OFFERS</p>
+    </section>
+
+    <section class="grid">
+        <div class="card">
+            <img src="https://www.kalkifashion.com/blogs/wp-content/uploads/2023/07/Ethnic_Outfits_For_Men__Women_To_Get_Into_The_Spirit_Of_Independence.jpg"" alt="Ethnic Wear">
+            <h3>Ethnic Wear</h3>
+            <p>"Grace in every drape, beauty in every thread."</p>
+        </div>
+        <div class="card">
+            <img src="https://cdn.shopify.com/s/files/1/0266/6276/4597/files/tshirts_for_men___women.png?v=1671719202" alt="Casual Wear">
+            <h3>Casual Wear</h3>
+            <p>"Outfits that go with your mood."</p>
+        </div>
+        <div class="card">
+            <img src="https://cdn.shopify.com/s/files/1/0266/6276/4597/files/western_wear_for_men___women.jpg?v=1662624675" alt="Sports Wear">
+            <h3>Sports Wear</h3>
+            <p>"Where performance meets style"</p>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/11/34/be/1134be48feb0112357ce80aae3c4b7ec.jpg" alt="Office Wear">
+            <h3>Office Wear</h3>
+            <p>"Confidence is your best accessory, wear it daily"</p>
+        </div>
+        <div class="card">
+            <img src="https://www.zupppy.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-28-at-9.29.03-AM.jpeg" alt="Bags & Wallets">
+            <h3>Bag and Wallets</h3>
+            <p>"Secure your essentials in style."</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Shopping Hub</p>
+    </footer>
+
+    <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("active");
+    }
+
+    window.addEventListener("resize", () => {
+      console.log(`Screen width: ${window.innerWidth}px`);
+    });
+    </script>
+</body>
+</html>
